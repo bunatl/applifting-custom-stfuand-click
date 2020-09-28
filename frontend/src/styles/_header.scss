@@ -1,0 +1,45 @@
+header{
+    width: 100%;
+    text-align: center;
+    
+    >.title{
+        background: $theme-blue;
+        h1{
+            text-transform: uppercase;
+        }
+    }
+
+    >.quote{
+        // background: salmon;
+        margin: 0 auto;
+        max-width: calc( #{$content-max-width} - 100px);
+        font-style: italic;
+
+        >.author{
+            margin-top: .5em;
+            text-align: right;
+        }
+    }
+
+    >.share{
+        >div:first-child{
+            font-size: 1.75em;
+
+            >span{
+                font-weight: bold;
+            }
+        }
+
+        >div:last-child>div{
+            display: inline;
+            background: lightgray;
+            border: 1px solid darken(darkgray, 30%);
+            border-radius: 0.25em;
+            padding: .3em;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}

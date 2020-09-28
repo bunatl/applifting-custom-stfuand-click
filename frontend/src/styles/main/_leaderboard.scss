@@ -1,0 +1,60 @@
+.leaderboard{
+    @include flex(column, nowrap, space-around);
+    flex-grow: 1;
+}
+
+.leaderboardTable{
+    width: 100%;
+
+    >thead{
+        text-transform: uppercase;
+        color: darkgray;
+        background: lightgray;
+    }
+
+    .colNumber{
+        min-width: 3em;
+        text-align: center;
+    }
+
+    .colTeam{
+        width: 100%;
+        text-align: left;
+        padding: 0 1em;
+    }
+
+    .colClicks{
+        text-align: right;
+        padding-right: 1em;
+    }
+
+    tr{
+        border-bottom: 1px solid black;
+
+        &:nth-child(odd){
+            background: lighten($theme-blue, 20%);
+        }
+
+        &:nth-child(even){
+            background: lighten($theme-blue, 25%);
+        }
+    }
+
+}
+
+.spinner{
+    margin: 6em auto 0 auto;
+}
+
+.currentTeamRow{
+    background: darken($theme-blue, 15%) !important;
+    border: 2px solid $theme-blue !important;
+    font-weight: bold;
+    color: white;
+    
+    td{
+        font-size: 1.4em;
+        padding-top: .5em;
+        padding-bottom: .5em;
+    }
+}

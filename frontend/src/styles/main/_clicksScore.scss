@@ -1,0 +1,17 @@
+.clicksScore{
+    @include flex(row, wrap, space-around);
+    width: 80%;
+    margin: 1em auto 0 auto;
+
+    >div{
+        width: 40%;
+        text-align: center;
+        font-style: italic;
+
+        >.clicksCount{
+            font-size: 2em;
+            font-weight: bold;
+            color: $theme-blue;
+        }
+    }
+}

@@ -1,0 +1,52 @@
+.header{
+    @include flex(row, wrap, space-between);
+    width: 100%;
+
+    >.team{
+        width: 40%;
+
+        >div>input{
+            width: 100%;
+            border-radius: .25em;
+            border: 2px solid darkgray;
+        }
+    }
+
+    >.startClickingButton{
+        width: 50%;
+
+        >button{
+            background: $theme-blue;
+            height: 100%;
+            width: 100%;
+            border-radius: .25em;
+            border: 2px solid darkblue;
+            font-size: 1.5em;
+
+            &:hover{
+                background: darken($theme-blue, 15%);
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.mainClikignButton{
+    min-height: 5em;
+    width: 80%;
+    margin: 0 auto;
+
+    >button{
+        background: $theme-blue;
+        height: 100%;
+        width: 100%;
+        border-radius: .25em;
+        border: 2px solid darkblue;
+        font-size: 1.5em;
+
+        &:hover{
+            background: darken($theme-blue, 15%);
+            font-weight: bold;
+        }
+    }
+}

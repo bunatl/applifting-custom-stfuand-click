@@ -1,0 +1,9 @@
+@mixin flex($direction, $wrap, $justify){
+    display: flex;
+    flex-direction: $direction;
+    wrap: $wrap;
+    justify-content: $justify;
+}
+
+$theme-blue: cornflowerblue;
+$content-max-width: 700px;

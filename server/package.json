@@ -1,0 +1,29 @@
+{
+  "name": "server-stfuandclick",
+  "version": "1.0.0",
+  "description": "Backend for appliftings game",
+  "main": "src/index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "restapi"
+  ],
+  "author": "Lukas Bunat",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^17.2.1",
+    "monk": "^7.3.2"
+  },
+  "devDependencies": {
+    "helmet": "^4.1.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4"
+  }
+}
