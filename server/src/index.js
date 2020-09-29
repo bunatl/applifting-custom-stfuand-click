@@ -19,8 +19,7 @@ app.use(morgan('dev'));
 
 // CORS policy
 app.use(cors({
-    //only frontend can access backend
-    origin: '*'
+    origin: process.env.CORS_ORIGIN
 }));
 
 // recognize the incoming Request Object as a JSON Object
@@ -38,6 +37,6 @@ app.use(errorHandler.errors);
 
 /* == Listen == */
 const port = process.env.PORT || 4444;
-app.listen(port, 'localhost', () => {
+app.listen(port, '127.0.0.1', () => {
     console.log(`listening on port: ${ port }`);
 });

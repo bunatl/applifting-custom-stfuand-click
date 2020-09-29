@@ -53,7 +53,7 @@ export function MainClickingButton() {
         try {
             const res = await axios({
                 method: 'POST',
-                url: `${process.env.REACT_APP_DB_URI}/api/click`,
+                url: `/api/click`,
                 header: {
                     type: 'application/json'
                 },
