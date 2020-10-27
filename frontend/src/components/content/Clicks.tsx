@@ -12,7 +12,7 @@ import {
 
 const axios = require('axios');
 
-export function Clicks() {
+export const Clicks = () => {
     const [ teamNameInput, setTeamNameInput ] = useState<string>('');
     const dispatch = useDispatch();
 
@@ -38,7 +38,7 @@ export function Clicks() {
     );
 }
 
-export function MainClickingButton() {
+export const MainClickingButton = () => {
     const dispatch = useDispatch();
     const { slug } = useParams<IPathParams>();
 
@@ -53,7 +53,7 @@ export function MainClickingButton() {
         try {
             const res = await axios({
                 method: 'POST',
-                url: `/api/click`,
+                url: `${process.env.REACT_APP_DB_URI}/api/click`,
                 header: {
                     type: 'application/json'
                 },

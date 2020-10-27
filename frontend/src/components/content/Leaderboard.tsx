@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import ReactLoading from 'react-loading';
-import Ribbon from './Ribbon'
+import { Ribbon } from './Ribbon'
 import { ILeaderboardEntry } from '../../types/componentTypes'
 const axios = require('axios');
 
-function Leaderboard() {
+export const Leaderboard = () => {
     const [ loading, setLoading ] = useState<boolean>(false);
     const [ leaderboard, setLeaderboard ] = useState<ILeaderboardEntry[]>([]);
 
@@ -62,5 +62,3 @@ function Leaderboard() {
         </div>
     );
 }
-
-export default Leaderboard;

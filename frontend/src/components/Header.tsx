@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from "react-router-dom";
 import { IPathParams } from '../types/componentTypes'
 
-export function Quote() {
+export const Quote = () => {
     return (
         <div className="quote">
             <div className="text">"It's really simple,  you just need to click as fast as you can"</div>
@@ -11,16 +11,16 @@ export function Quote() {
     );
 }
 
-export function SharingInfo() {
+export const SharingInfo = () => {
     // URL params in react router: https://reactrouter.com/web/example/url-params
     const { slug } = useParams<IPathParams>();
 
     const addToClipboard = () => {
         // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard
         const textToCopy = `${window.location.hostname}/${slug}`;
-        navigator.clipboard.writeText(textToCopy).then(function () {
+        navigator.clipboard.writeText(textToCopy).then(() => {
             alert("Text has been copied!")
-        }, function () {
+        }, () => {
             console.error("An error has occured. Please copy text again.")
         });
     }

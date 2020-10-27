@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Ribbon() {
+export const Ribbon = () => {
     return (
         // taken from: https://css-tricks.com/snippets/css/ribbon/
         // all credits to: Chris Coyier
@@ -11,5 +11,3 @@ function Ribbon() {
         </div>
     );
 }
-
-export default Ribbon;

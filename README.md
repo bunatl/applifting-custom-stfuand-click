@@ -10,6 +10,8 @@ App is hosted on  [applifting-custom-backend.techis.fun](http://applifting-custo
 ## Demo
 ![app demo](demo.gif)
 
+## Build and deploy
+
 ## Author
 Lukas Bunat
 
