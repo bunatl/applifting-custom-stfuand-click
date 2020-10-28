@@ -8,10 +8,7 @@ const notFound = ((req, res, next) => {
 const errors = ((error, req, res, next) => {
     //check if the error is comming from (un)known route, set status code accordingly
     res.status(res.statusCode === 200 ? 500 : res.statusCode);
-    res.json({
-        message: error.message,
-        stack: process.env.PRODUCTION === 1 ? '🐱‍👤' : error.stack
-    });
+    res.json(error.message);
 });
 
 module.exports = {

@@ -14,31 +14,30 @@ router.post('/', async (req, res, next) => {
         // validate input
         const validationResult = await Click.validateAsync(req.body);
         // get entries from DB
-        clicks
-            .findOneAndUpdate(
-                { team: req.body.team },
-                {
-                    $inc:
-                        { clicks: 1 }
-                }
-            )
-            .then(async updatedDoc => {
-                let firstEntry;
-                // if null, add
-                if (!updatedDoc)
-                    firstEntry = await clicks.insert({
-                        team: req.body.team,
-                        clicks: 1
-                    },
-                        { upsert: true }
-                    );
+        const updatedDoc = await clicks.findOneAndUpdate(
+            { team: req.body.team },
+            {
+                $inc:
+                    { clicks: 1 }
+            }
+        );
+        let firstEntry;
+        // if null, add
+        if (!updatedDoc)
+            firstEntry = await clicks.insert({
+                team: req.body.team,
+                clicks: 1
+            },
+                { upsert: true }
+            );
 
-                // depending return either newly create doc or the updated one
-                res.json({
-                    msg: "OK",
-                    data: !updatedDoc ? firstEntry : updatedDoc
-                });
-            });
+        res.status(200);
+        // depending return either newly create doc or the updated one
+        res.json({
+            msg: "OK",
+            data: !updatedDoc ? firstEntry : updatedDoc
+        });
+
     }
     catch (err) {
         res.status(422);
