@@ -15,6 +15,16 @@ const axios = require('axios');
 export const Clicks = () => {
     const [ teamNameInput, setTeamNameInput ] = useState<string>('');
     const dispatch = useDispatch();
+    const handleUserInputForTeamName = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
+        // validate user input (check if lastly added char is valid)
+        const regex = /[[A-Z\][a-z\][0-9\]\-._~:?#[\]@!$&'()*+,;%]/g;
+        if (value.charAt(value.length - 1).match(regex) === null) {
+            alert(`Character ${value.charAt(value.length - 1)} that you have entered isn't valid. Please enter different one.`);
+            return;
+        };
+        // set user input
+        setTeamNameInput(value)
+    }
 
     return (
         <div className="header">
@@ -24,7 +34,7 @@ export const Clicks = () => {
                     <input
                         placeholder="Your mom"
                         value={teamNameInput}
-                        onChange={e => setTeamNameInput(e.target.value)}
+                        onChange={e => handleUserInputForTeamName(e)}
                     ></input>
                 </div>
             </div>
