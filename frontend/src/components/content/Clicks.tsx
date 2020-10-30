@@ -79,7 +79,9 @@ export const MainClickingButton = () => {
             // update leadership board
             dispatch(updateLeaderboard());
         } catch (err) {
-            console.log(err);
+            console.error(err);
+            console.log('trying to send click again...');
+            click();
         }
     }
 

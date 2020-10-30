@@ -22,7 +22,7 @@ export const Leaderboard = () => {
                 const res = await axios.get(`/api/leaderboard`);
                 setLeaderboard(res.data.response);
             } catch (err) {
-                console.error(err);
+                console.error(`Cannot fetch leaderboard: ${err}`);
             }
             clearTimeout(timer);
             setLoading(false);
