@@ -4,8 +4,9 @@
   "description": "Backend for appliftings game",
   "main": "src/index",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index"
+    "dev": "nodemon src/index.ts",
+    "start": "node ./build/index.js",
+    "build": "tsc"
   },
   "keywords": [
     "nodejs",
@@ -15,15 +16,20 @@
   "author": "Lukas Bunat",
   "license": "MIT",
   "dependencies": {
+    "@types/cors": "^2.8.8",
+    "@types/express": "^4.17.8",
+    "@types/node": "^14.14.6",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "joi": "^17.2.1",
-    "monk": "^7.3.2"
+    "monk": "^7.3.2",
+    "typescript": "^4.0.5"
   },
   "devDependencies": {
     "helmet": "^4.1.1",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "ts-node": "^9.0.0"
   }
 }

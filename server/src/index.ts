@@ -1,5 +1,5 @@
-const express = require('express');
-const cors = require('cors');
+import express, { Request, Response } from "express";
+import cors from "cors";
 const morgan = require('morgan');
 const helmet = require('helmet');
 require('dotenv').config();
@@ -36,7 +36,7 @@ app.use(errorHandler.notFound);
 app.use(errorHandler.errors);
 
 /* == Listen == */
-const port = process.env.PORT || 4444;
+const port: number = parseInt(process.env.PORT!) || 4444;
 app.listen(port, '127.0.0.1', () => {
-    console.log(`listening on port: ${ port }`);
+    console.log(`listening on port: ${port}`);
 });

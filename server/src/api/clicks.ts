@@ -1,4 +1,4 @@
-const express = require('express');
+import express, { Request, Response, NextFunction } from "express";
 const router = express.Router();
 
 // == import DB connection == 
@@ -8,9 +8,8 @@ const clicks = db.get('clicks');
 // import model
 const Click = require('../model/Click');
 
-router.post('/', async (req, res, next) => {
+router.post('/', async (req: Request, res: Response, next: NextFunction) => {
     try {
-        console.log(req.body);
         // validate input
         const validationResult = await Click.validateAsync(req.body);
         // get entries from DB
@@ -21,10 +20,10 @@ router.post('/', async (req, res, next) => {
                     { clicks: 1 }
             }
         );
-        let firstEntry;
         // if null, add
-        if (!updatedDoc)
-            firstEntry = await clicks.insert({
+        const firstEntry = updatedDoc
+            ? null
+            : await clicks.insert({
                 team: req.body.team,
                 clicks: 1
             },

@@ -1,4 +1,4 @@
-const express = require('express');
+import express, { Request, Response, NextFunction } from "express";
 const router = express.Router();
 
 // == import DB connection == 
@@ -6,7 +6,7 @@ const db = require('../db/db');
 // get or create a collection
 const clicks = db.get('clicks');
 
-router.get('/', async (req, res, next) => {
+router.get('/', async (req: Request, res: Response, next: NextFunction) => {
     try {
         // get entries from DB
         const doc = await clicks.aggregate([
