@@ -2,7 +2,6 @@ import { Request, Response, NextFunction } from "express";
 
 const notFound = ((req: Request, res: Response, next: NextFunction) => {
     res.status(404);
-
     //passing to the next middleware - this time error handler
     next(new Error(`Not found - ${req.originalUrl}`));
 });

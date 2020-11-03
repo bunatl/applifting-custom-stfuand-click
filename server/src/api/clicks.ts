@@ -15,10 +15,7 @@ router.post('/', async (req: Request, res: Response, next: NextFunction) => {
         // get entries from DB
         const updatedDoc = await clicks.findOneAndUpdate(
             { team: req.body.team },
-            {
-                $inc:
-                    { clicks: 1 }
-            }
+            { $inc: { clicks: 1 } }
         );
         // if null, add
         const firstEntry = updatedDoc

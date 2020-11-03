@@ -5,12 +5,14 @@ Demo button-click game/app for applifting with custom backend.
 Simple web app that allows user to compete agains other in clicking. Users can share their link to theirs' friends in order to get more more overall clicks.
 
 ## Live demo link
-App is hosted on  [applifting-custom-backend.techis.fun](http://applifting-custom-backend.techis.fun) on VPS.
+App is hosted on  [clicks.techis.fun](http://clicks.techis.fun) and deployed on own hosting (devops skillz ♥).
 
 ## Demo
 ![app demo](demo.gif)
 
 ## Build and deploy
+- *frontend*: `npm start`
+- *server*: `npm run dev` 
 
 ## Author
 Lukas Bunat

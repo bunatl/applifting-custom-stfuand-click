@@ -1,13 +1,13 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import cors from "cors";
-const morgan = require('morgan');
-const helmet = require('helmet');
+import helmet from 'helmet';
+
 require('dotenv').config();
+const morgan = require('morgan');
+const app = express();
 
 const Leaderboard = require('./api/leaderboard');
 const Clicks = require('./api/clicks');
-
-const app = express();
 
 /* 
     For security reasons

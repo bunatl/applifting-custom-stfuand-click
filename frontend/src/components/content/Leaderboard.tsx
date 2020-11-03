@@ -19,7 +19,7 @@ export const Leaderboard = () => {
             const timer = setTimeout(() => setLoading(true), 750);
 
             try {
-                const res = await axios.get(`/api/leaderboard`);
+                const res = await axios.get(`${process.env.REACT_APP_DB_URI}/api/leaderboard`);
                 setLeaderboard(res.data.response);
             } catch (err) {
                 console.error(`Cannot fetch leaderboard: ${err}`);

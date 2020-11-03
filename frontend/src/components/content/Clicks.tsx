@@ -17,8 +17,8 @@ export const Clicks = () => {
     const dispatch = useDispatch();
     const handleUserInputForTeamName = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
         // validate user input (check if lastly added char is valid)
-        const regex = /[[A-Z\][a-z\][0-9\]\-._~:?#[\]@!$&'()*+,;%]/g;
-        if (value.charAt(value.length - 1).match(regex) === null) {
+        const regex = /[[A-Z\][a-z\][0-9\]\-._~:?#[\]@!$&'()*+,;%\b]/g;
+        if (value.charAt(value.length - 1).match(regex) === null && value !== '') {
             alert(`Character ${value.charAt(value.length - 1)} that you have entered isn't valid. Please enter different one.`);
             return;
         };
@@ -80,7 +80,7 @@ export const MainClickingButton = () => {
             dispatch(updateLeaderboard());
         } catch (err) {
             console.error(err);
-            console.log('trying to send click again...');
+            console.log('Trying to send click again...');
             click();
         }
     }
